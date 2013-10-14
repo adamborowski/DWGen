@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "Data.js",
+  "sourceRoot": "",
+  "sources": [
+    "Data.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA,GAAA;;CAAA,CAAA,CACC,MADD;CACC,CAAS,EAAT,GAAA,CAAS;CAAT,CAMS,EAAT,GAAA;OACC;CAAA,CACC,MADD,KAAA;CACC,CAAwB,OAAA,CAAxB,YAAA;CAAA,CAGoB,MAAA,CAAA,CAApB,QAAA;CAHA,CASoB,KAAA,GAApB,QAAA;UAVD;QADQ;MANT;CADD,GAAA;;CAsBA;;;CAtBA;;CAAA,CAyBA,CAAoB,IAAb,EAAP;CAzBA"
+}

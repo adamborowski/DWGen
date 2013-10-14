@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "Generator.js",
+  "sourceRoot": "",
+  "sources": [
+    "Generator.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA,KAAA;;CAAA,CAAA,CAAK,CAAL,GAAK,IAAA;;CAAL,CACA,CAAM,EAAN,EAAM,KAAA;;CADN,CAGA,CAAA,CAAA,CAAA,EAAO,OAAP;CAHA"
+}
