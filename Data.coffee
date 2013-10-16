@@ -62,12 +62,12 @@ providers =
 	]
 # refrencje do kategorii dań
 c =
-	alkohol: {nazwa: 'alkohol', jednostka: 'ml', opis: 'palące w ustach trunki oraz te wyrafinowane - wszystko czego pragnie alkoholowy smakosz'}
+	alkohole: {nazwa: 'alkohol', jednostka: 'ml', opis: 'palące w ustach trunki oraz te wyrafinowane - wszystko czego pragnie alkoholowy smakosz'}
 	napoje: {nazwa: 'napoje', jednostka: 'ml', opis: 'coś do wypicia na ciepło i na zimno'}
 	miesne: {nazwa: 'mięsne', jednostka: 'g', opis: 'mięcho na obiad'}
 	przekaski: {nazwa: 'przekąski', jednostka: 'g', opis: 'podawane przed obiadem'}
 	pizza: {nazwa: 'pizza', jednostka: 'g', opis: 'smaczna pizza'}
-	makar: {nazwa: 'makarony', jednostka: 'g', opis: 'pełen asortyment włoskich makaronów - wszystkie al\' dente'}
+	makarony: {nazwa: 'makarony', jednostka: 'g', opis: 'pełen asortyment włoskich makaronów - wszystkie al\' dente'}
 # słownik dań |nazwa porcja cena_za_porcje kategoria|
 #TODO Rzymek, mógłbyś dodać tutaj trochę dań?
 dania: [
