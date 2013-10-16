@@ -1,4 +1,4 @@
-names = [
+names =
 	food: [
 		"Restaurante"
 		"Pizzerina"
@@ -18,8 +18,8 @@ names = [
 		"Germedica"
 		"Altenpflege Pro"
 	]
-]
 randomParts = "super pos hub muss hajo lobo hyper uber kalo new rich wed mon ptero tera giga mini gust serwis strefa zatoka kraina eden".split " "
+_generatedCompanies={}
 utils =
 	random:
 		integer: (from, to=null)->
@@ -29,14 +29,23 @@ utils =
 			return Math.floor (Math.random() * (to - from) + from)
 		companyName: (category="food")->
 			set = names[category]
-			debugger
-			if Math.random() < 0.10
-				return set[utils.random set.length]
-			prefixIndex = utils.random.integer(randomParts.length)
-			suffixIndex = utils.random.integer(randomParts.length - 1) # pierwszy już był wybrany
-			suffixIndex++ if suffixIndex >= prefixIndex # przesuwamy aby nie powtórzył się
-			if Math.random() < .2 then infix = " #{set[utils.random set.length]} " else ""
-			return "#{randomParts[prefixIndex]}#{infix}#{randomParts[suffixIndex]}"
+			while yes
+				if Math.random() < 0.10
+					newName = set[utils.random.integer set.length]
+				else
+					ret = []
+					prefixIndex = utils.random.integer(randomParts.length)
+					ret.push randomParts[prefixIndex]
+
+					suffixIndex = utils.random.integer(randomParts.length - 1) # pierwszy już był wybrany
+					suffixIndex++ if suffixIndex >= prefixIndex # przesuwamy aby nie powtórzył się
+					ret.push set[utils.random.integer set.length] if Math.random() < .2
+					ret.push randomParts[suffixIndex]
+					newName = ret.join ' '
+				if _generatedCompanies[newName]==undefined
+					_generatedCompanies[newName]=yes
+					return newName
+				# powtarzaj do skutku
 
 for key, value of utils
 	exports[key] = value

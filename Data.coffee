@@ -60,7 +60,28 @@ providers =
 		'eSKaeM'
 		'EsKaEm'
 	]
+# refrencje do kategorii dań
+c =
+	alkohol: {nazwa: 'alkohol', jednostka: 'ml', opis: 'palące w ustach trunki oraz te wyrafinowane - wszystko czego pragnie alkoholowy smakosz'}
+	napoje: {nazwa: 'napoje', jednostka: 'ml', opis: 'coś do wypicia na ciepło i na zimno'}
+	miesne: {nazwa: 'mięsne', jednostka: 'g', opis: 'mięcho na obiad'}
+	przekaski: {nazwa: 'przekąski', jednostka: 'g', opis: 'podawane przed obiadem'}
+	pizza: {nazwa: 'pizza', jednostka: 'g', opis: 'smaczna pizza'}
+	makar: {nazwa: 'makarony', jednostka: 'g', opis: 'pełen asortyment włoskich makaronów - wszystkie al\' dente'}
+# słownik dań |nazwa porcja cena_za_porcje kategoria|
+#TODO Rzymek, mógłbyś dodać tutaj trochę dań?
+dania: [
+	['Margerita', 24, 400, c.pizza]
+	['Capricciosa', 23, 400, c.pizza]
+	['Fungi', 23, 400, c.pizza]
+	['Wiejska', 23, 400, c.pizza]
+	#
+	['herbata', 6, 400, c.napoje]
+	['kawa', 8, 300, c.napoje]
+	#
+	['oscypek z żurawiną', 32, c.przekaski]
 
+]
 ###
     PUBLIC EXPORT
 ###
