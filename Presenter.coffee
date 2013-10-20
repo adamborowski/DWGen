@@ -21,19 +21,16 @@ exports.writeSQL = (erd)->
     line "INSERT INTO Restauracja VALUES (#{r.id}, '#{r.nazwa}', '#{r.adres}', #{r.godzina_otwarcia}, #{r.godzina_zamkniecia}, #{r.liczba_miejsc})"
 
   line header 'KELNERZY'
-  for i in erd.Kelner
-    line "INSERT INTO Kelnerzy VALUES (#{i.id}, #{i.restauracja.id}, '#{i.nazwisko}', '#{i.imie}', '#{i.data_zatrudnienia}')"
+  for k in erd.Kelner
+    line "INSERT INTO Kelnerzy VALUES (#{k.id}, #{k.restauracja.id}, '#{k.nazwisko}', '#{k.imie}', '#{k.data_zatrudnienia}')"
 
   line header 'KATEGORIE'
-  for i in erd.Kategoria
-    line "INSERT INTO Kategorie VALUES (#{i.id}, '#{i.nazwa}', '#{i.opis}')"
+  for k2 in erd.Kategoria
+    line "INSERT INTO Kategorie VALUES (#{k2.id}, '#{k2.nazwa}', '#{k2.opis}')"
 
   line header 'DANIA'
-  for i in erd.Danie
-    line "INSERT INTO Dania VALUES (#{i.id}, #{i.kategoria.id}, '#{i.nazwa}', #{i.cena}, #{i.porcja}, '#{i.kategoria.jednostka}')"
+  for d in erd.Danie
+    line "INSERT INTO Dania VALUES (#{d.id}, #{d.kategoria.id}, '#{d.nazwa}', #{d.cena}, #{d.porcja}, '#{d.kategoria.jednostka}')"
 
   save()
-
-
-
 

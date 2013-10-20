@@ -32,12 +32,8 @@ ERD =
 #
 
 for key, kategoria_data of data.kategorie
-  kategoria =
-    id: ERD.id(Kategoria)
-    nazwa: kategoria_data.nazwa
-    opis: kategoria_data.opis
-    jednostka: kategoria_data.jednostka
-  Kategoria.push kategoria
+  kategoria_data.id = ERD.id(Kategoria)
+  Kategoria.push kategoria_data
   kategoria_data.dania = []
 
 for key, danie_data of data.dania
