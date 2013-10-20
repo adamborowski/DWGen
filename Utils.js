@@ -57,6 +57,16 @@
         }
         return Math.floor(Math.random() * (to - from) + from);
       },
+      float: function(from, to) {
+        if (to == null) {
+          to = null;
+        }
+        if (from == null) {
+          to = from;
+          from = 0;
+        }
+        return Math.random() * (to - from) + from;
+      },
       companyName: function(category) {
         var newName, prefixIndex, ret, set, suffixIndex;
         if (category == null) {
@@ -85,6 +95,9 @@
             return newName;
           }
         }
+      },
+      arrayItem: function(array) {
+        return array[Math.floor(Math.random() * array.length)];
       }
     }
   };

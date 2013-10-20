@@ -1,3 +1,6 @@
+print = console.log
+Utils=require './Utils.js'
+#
 simulation = []
 mscPerDay = 1000 * 60 * 60 * 24
 erd = undefined
@@ -5,18 +8,22 @@ config = undefined
 Kategoria = undefined
 restaurantConfig = undefined
 swing = undefined
+restaurant = undefined
 #
 test = []
 testCategory = undefined
 
+orders = []
+
 #
-exports.init = (_config, _erd)->
+exports.init = (_config, _erd, _restaurant)->
 	erd = _erd
 	config = _config
 	Kategoria = erd.Kategoria
 	restaurantConfig = config.erd.restaurant
 	swing = restaurantConfig.swing
 	test = []
+	restaurant = _restaurant
 	testCategory = Kategoria.filter((kat)->
 		kat.id == 'pizza'
 	)[0]
@@ -55,7 +62,7 @@ exports.simRange = (range, erd, config)->
 	while currentDate <= rangeEnd
 		if range.changeAtStart? and numDays <= range.changeAtStart.duration
 			simChange range.changeAtStart
-		simOrdinalDay currentDate
+		simDay currentDate
 		#
 		currentDate.addDays(1)
 		numDays++
@@ -69,7 +76,7 @@ simChange = (change)->
 #		console.log "SIM CHANGE W KATEGORII " + kategoria.id
 		kategoria.dailySaleBase += change.addition / change.duration
 
-simOrdinalDay = (date, erd)->
+simDay = (date, erd)->
 #	console.log 'simulation of ordinary day ' + date.toDayString()
 	# oblicz przyrost dzienny
 	daily = Math.random() * (swing.highLimit - swing.lowLimit) + swing.lowLimit
@@ -82,5 +89,44 @@ simOrdinalDay = (date, erd)->
 		#	console.log("dailySwing:", Kategoria[0].dailySale);
 		kategoria.daySales.push
 			date: new Date date
-			numSales: kategoria.dailySale
-
+			numSales: Math.floor(kategoria.dailySale)
+	generateDailyOrders date, Kategoria[0].daySales.length - 1, orders
+# generowanie zamówień, wejście i wyjście niezależne od całej symulacji
+generateDailyOrders = (date, daySalesIndex, pushTo)->
+	print "generate daily orders: #{date.toDayString()}"
+	#przejrzyj kategorie
+	remainingSales = ({kategoria: kategoria, numSales: kategoria.daySales[daySalesIndex].numSales} for kategoria in Kategoria)
+	sumSales = remainingSales.reduce (sum, sale)->
+		sum + sale.numSales
+	, 0
+	print "pozostało do wykorzystania: #{sale.kategoria.id}: #{sale.numSales}" for sale in remainingSales
+	avgOrderSize = config.erd.restaurant.avgOrderSize
+	numOrders = Math.round(sumSales / avgOrderSize)
+	#najpierw generuj same zamówienia
+	restaurantOpen = restaurant.godzina_otwarcia
+	restaurantClose = restaurant.godzina_zamkniecia
+	genTime = ->
+		hh = Utils.random.integer(restaurantOpen, restaurantClose)
+		mm = Utils.random.integer(0, 60)
+		genDate=new Date(date)
+		genDate.setHours hh
+		genDate.setMinutes mm
+		return genDate
+	DailyOrder = []
+	for i in [1..numOrders]
+		orderTime =genTime()
+		makeDuration=Utils.random.float config.erd.restaurant.minWaitMinutes, config.erd.restaurant.maxWaitMinutes
+		dailyOrder =
+			data_przyjecia: orderTime
+			data_platnosci: new Date(orderTime).addMinutes makeDuration
+			kelner: Utils.random.arrayItem restaurant.kelnerzy
+			numer_stolika: Utils.random.integer restaurant.liczba_miejsc
+		#
+		#
+		DailyOrder.push dailyOrder
+	#
+	DailyOrder.sort (a, b)->
+		return -1  if a.data_przyjecia < b.data_przyjecia
+		return 1  if a.data_przyjecia > b.data_przyjecia
+		0
+	print DailyOrder

@@ -9,7 +9,7 @@ utils = require './Utils.js'
 charlatan = require 'charlatan'
 charlatan.setLocale 'pl'
 #
-simulator=require './SalesSimulator.js'
+simulator = require './SalesSimulator.js'
 ################################################
 #--------- ETAP PIERWSZY ---- GENERACJA DANYCH z configu + elementy losowe
 #(--------- ETAP DRUGI ------- tworzenie reprezentacji, np w SQL)
@@ -33,6 +33,8 @@ ERD =
 for key, kategoria_data of data.kategorie
 	kategoria_data.id = key
 	Kategoria.push kategoria_data
+	kategoria_data.dania = []
+
 for key, danie_data of data.dania
 	danie =
 		id: ERD.id(Danie)
@@ -40,6 +42,7 @@ for key, danie_data of data.dania
 		cena: danie_data[1]
 		porcja: danie_data[2]
 		kategoria: danie_data[3]
+	danie.kategoria.dania.push danie
 	Danie.push danie
 
 for name, i in config.erd.restaurantNames
@@ -51,6 +54,7 @@ for name, i in config.erd.restaurantNames
 		godzina_otwarcia: utils.random.integer(config.erd.restaurant.openTime[0], config.erd.restaurant.openTime[1])
 		godzina_zamkniecia: utils.random.integer(config.erd.restaurant.closeTime[0], config.erd.restaurant.closeTime[1])
 		liczba_miejsc: utils.random.integer(config.erd.restaurant.minCapacity, config.erd.restaurant.maxCapacity)
+		kelnerzy: []
 	Restauracja.push restauracja
 	#przydzielanie kelnerów
 	numWaiters = Math.ceil(Math.random() * 0.1 + 0.95 * restauracja.liczba_miejsc / 8)
@@ -62,6 +66,7 @@ for name, i in config.erd.restaurantNames
 			nazwisko: charlatan.Name.lastName()
 			data_zatrudnienia: config.erd.hireDate
 		Kelner.push kelner
+		restauracja.kelnerzy.push kelner
 
 #console.log("Restauracja:", Restauracja);
 #console.log("Kelner:", Kelner);

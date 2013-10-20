@@ -47,6 +47,7 @@
     kategoria_data = _ref[key];
     kategoria_data.id = key;
     Kategoria.push(kategoria_data);
+    kategoria_data.dania = [];
   }
 
   _ref1 = data.dania;
@@ -59,6 +60,7 @@
       porcja: danie_data[2],
       kategoria: danie_data[3]
     };
+    danie.kategoria.dania.push(danie);
     Danie.push(danie);
   }
 
@@ -71,7 +73,8 @@
       adres: "" + (charlatan.Address.streetAddress()) + ", " + (charlatan.Address.zipCode()) + " " + (charlatan.Address.city()),
       godzina_otwarcia: utils.random.integer(config.erd.restaurant.openTime[0], config.erd.restaurant.openTime[1]),
       godzina_zamkniecia: utils.random.integer(config.erd.restaurant.closeTime[0], config.erd.restaurant.closeTime[1]),
-      liczba_miejsc: utils.random.integer(config.erd.restaurant.minCapacity, config.erd.restaurant.maxCapacity)
+      liczba_miejsc: utils.random.integer(config.erd.restaurant.minCapacity, config.erd.restaurant.maxCapacity),
+      kelnerzy: []
     };
     Restauracja.push(restauracja);
     numWaiters = Math.ceil(Math.random() * 0.1 + 0.95 * restauracja.liczba_miejsc / 8);
@@ -84,6 +87,7 @@
         data_zatrudnienia: config.erd.hireDate
       };
       Kelner.push(kelner);
+      restauracja.kelnerzy.push(kelner);
     }
   }
 

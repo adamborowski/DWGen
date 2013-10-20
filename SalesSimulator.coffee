@@ -1,5 +1,6 @@
 dateUtils = require 'date-utils'
 simImpl=require './SimImpl.js'
+
 compare = (a, b) ->
 	return -1  if a.when < b.when
 	return 1  if a.when > b.when
@@ -38,7 +39,7 @@ simRestaurant = (restaurant, config, erd)->
 	czyli zmiany należy przesortować zwględem daty zmian i na takie odcinki podzielić
 	###
 	changes = config.erd.restaurant.changes.sort compare
-	category.dailySaleBase = config.erd.restaurant.numSales for category in erd.Kategoria
+	category.dailySaleBase = config.erd.restaurant.initialSalesRatio*restaurant.liczba_miejsc for category in erd.Kategoria
 	category.daySales = [] for category in erd.Kategoria
 	simStart = config.erd.restaurant.simStart
 	simEnd = config.erd.restaurant.simEnd
@@ -47,14 +48,14 @@ simRestaurant = (restaurant, config, erd)->
 	ranges = generateRanges simStart, simEnd, changes
 	simImpl.simRange range, erd for range in ranges
 
-	# RZYMEK - tutaj masz dostęp do ilości sprzedanych produktów z każdej kategorii każdego dnia
-	for kategoria in erd.Kategoria
-		console.log "#{kategoria.id} - #{day.date.toDayString()} - #{Math.floor(day.numSales)}" for day in kategoria.daySales
+#	for kategoria in erd.Kategoria
+#		console.log "#{kategoria.id} - #{day.date.toDayString()} - #{Math.floor(day.numSales)}" for day in kategoria.daySales
 	# TERAZ można wygenerować zamówienie, korzystając z dziennych ilości kategorii
 
 exports.simulate = (config, erd)->
-	simImpl.init config, erd
-	simRestaurant restaurant, config, erd for restaurant in erd.Restauracja[0..0]
+	for restaurant in erd.Restauracja[0..0]
+		simImpl.init config, erd, restaurant
+		simRestaurant restaurant, config, erd
 
 
 

@@ -42,6 +42,11 @@ utils =
 				to = from
 				from = 0
 			return Math.floor (Math.random() * (to - from) + from)
+		float: (from, to=null)->
+			unless from? # jeśli nie podano from, to chodzi o zakres (0,..)
+				to = from
+				from = 0
+			return Math.random() * (to - from) + from
 		companyName: (category = "food")->
 			set = names[category]
 			while yes
@@ -60,6 +65,8 @@ utils =
 				if _generatedCompanies[newName] == undefined
 					_generatedCompanies[newName] = yes
 					return newName
+		arrayItem: (array)->
+			array[Math.floor(Math.random() * array.length)]
 # powtarzaj do skutku
 
 for key, value of utils
