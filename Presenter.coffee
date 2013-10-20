@@ -18,11 +18,13 @@ line = (s)->
 exports.writeSQL = (erd)->
 	line header 'RESTAURACJE'
 	for r in erd.Restauracja
-		line "INSERT INTO Restauracja VALUES (#{r.id}, '#{r.nazwa}', '#{r.adres}', #{r.godzina_otwarcia}, #{r.godzina_zamkniecia}, #{r.liczba_miejsc})"
+		line "INSERT INTO Restauracje VALUES (#{r.id}, '#{r.nazwa}', '#{r.adres}', #{r.godzina_otwarcia}, #{r.godzina_zamkniecia}, #{r.liczba_miejsc});"
 	line header 'KELNERZY'
 	for r in erd.Kelner
-		line "INSERT INTO Kelner VALUES (#{r.id}, '#{r.nazwisko}', '#{r.imie}', #{r.data_zatrudnienia}, #{r.restauracja.id})"
+		line "INSERT INTO Kelnerzy VALUES (#{r.id}, '#{r.nazwisko}', '#{r.imie}', #{r.data_zatrudnienia}, #{r.restauracja.id});"
 	line header 'KATEGORIE'
+	for k in erd.Kategoria
+		line "INSERT INTO KATEGORIE VALUES ('#{k.id}', '#{k.nazwa}', '#{k.opis}');"
 	save()
 
 
