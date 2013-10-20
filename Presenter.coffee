@@ -18,7 +18,7 @@ line = (s)->
 exports.writeSQL = (erd)->
   line header 'RESTAURACJE'
   for r in erd.Restauracja
-    line "INSERT INTO Restauracja VALUES (#{r.id}, '#{r.nazwa}', '#{r.adres}', #{r.godzina_otwarcia}, #{r.godzina_zamkniecia}, #{r.liczba_miejsc})"
+    line "INSERT INTO Restauracje VALUES (#{r.id}, '#{r.nazwa}', '#{r.adres}', #{r.godzina_otwarcia}, #{r.godzina_zamkniecia}, #{r.liczba_miejsc})"
 
   line header 'KELNERZY'
   for k in erd.Kelner
@@ -34,10 +34,10 @@ exports.writeSQL = (erd)->
 
   line header 'ZAMOWIENIA'
   for z in erd.Zamowienie
-    line "INSERT INTO Dania VALUES (#{z.id}, #{z.kelner.id}, '#{z.data_przyjecia}', '#{z.data_platnosci}', #{z.numer_stolika}, 'ABCDEFGHIJKLM', '#{z.platnosc}')"
+    line "INSERT INTO Zamowienia VALUES (#{z.id}, #{z.kelner.id}, '#{z.data_przyjecia}', '#{z.data_platnosci}', #{z.numer_stolika}, 'ABCDEFGHIJKLM', '#{z.platnosc}')"
 
   line header 'ZAMOWIENIA_DANIA'
   for zp in erd.ZamowienieProdukt
-    line "INSERT INTO Dania VALUES (#{zp.zamowienie.id}, #{zp.danie.id}, #{zp.porcja}, #{zp.cena})"
+    line "INSERT INTO ZamowieniaDania VALUES (#{zp.zamowienie.id}, #{zp.danie.id}, #{zp.porcja}, #{zp.cena})"
 
   save()
