@@ -34,7 +34,7 @@
   });
 
   providers = {
-    discont: ['Grupon', 'EmBank', 'eSKaeM', 'EsKaEm']
+    discount: ['Grupon', 'EmBank', 'eSKaeM', 'EsKaEm']
   };
 
   c = {

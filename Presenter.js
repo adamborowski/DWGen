@@ -35,20 +35,31 @@
   };
 
   exports.writeSQL = function(erd) {
-    var r, _i, _j, _len, _len1, _ref, _ref1;
+    var d, k, r, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3;
     line(header('RESTAURACJE'));
     _ref = erd.Restauracja;
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       r = _ref[_i];
-      line("INSERT INTO Restauracja VALUES (" + r.id + ", '" + r.nazwa + "', '" + r.adres + "', " + r.godzina_otwarcia + ", " + r.godzina_zamkniecia + ", " + r.liczba_miejsc + ")");
+      line("INSERT INTO Restauracje VALUES (" + r.id + ", '" + r.nazwa + "', '" + r.adres + "', " + r.godzina_otwarcia + ", " + r.godzina_zamkniecia + ", " + r.liczba_miejsc + ");");
     }
     line(header('KELNERZY'));
     _ref1 = erd.Kelner;
     for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
       r = _ref1[_j];
-      line("INSERT INTO Kelner VALUES (" + r.id + ", '" + r.nazwisko + "', '" + r.imie + "', " + r.data_zatrudnienia + ", " + r.restauracja.id + ")");
+      line("INSERT INTO Kelnerzy VALUES (" + r.id + ", '" + r.nazwisko + "', '" + r.imie + "', " + r.data_zatrudnienia + ", " + r.restauracja.id + ");");
     }
     line(header('KATEGORIE'));
+    _ref2 = erd.Kategoria;
+    for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+      k = _ref2[_k];
+      line("INSERT INTO KATEGORIE VALUES ('" + k.id + "', '" + k.nazwa + "', '" + k.opis + "');");
+    }
+    line(header('DANIE'));
+    _ref3 = erd.Danie;
+    for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
+      d = _ref3[_l];
+      line("INSERT INTO DANIA VALUES ('" + d.id + "', '" + k.nazwa + "', '" + k.opis + "');");
+    }
     return save();
   };
 

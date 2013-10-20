@@ -163,6 +163,7 @@
         kelner: Utils.random.arrayItem(restaurant.kelnerzy),
         numer_stolika: Utils.random.integer(restaurant.liczba_miejsc),
         platnosc: Utils.random.arrayItem(config.erd.payments),
+        kod_rabatu: null,
         pozycje: {},
         toString: function() {
           var key, poz, str, _ref;

@@ -42,7 +42,7 @@ services: [
 	]
 ]
 providers =
-	discont: [
+	discount: [
 		'Grupon'
 		'EmBank'
 		'eSKaeM'

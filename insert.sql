@@ -3,119 +3,178 @@
 -- RESTAURACJE --
 -----------------
 
-INSERT INTO Restauracja VALUES (1, 'U Romka', 'ul.  Bartczak 50612, 20-502 Tomaszów Mazowiecki', 8, 20, 46)
-INSERT INTO Restauracja VALUES (2, 'U Tomka', 'al.  Długosz 93286, 67-124 Dąbie', 8, 19, 59)
-INSERT INTO Restauracja VALUES (3, 'U Grzesia', 'al.  Frątczak 130, 22-901 Lubaczów', 8, 21, 64)
-INSERT INTO Restauracja VALUES (4, 'U Fabiana', 'al.  Niemczyk 43455, 62-814 Bełchatów', 8, 19, 48)
-INSERT INTO Restauracja VALUES (5, 'U Maćka', 'ul.  Jasiński 60311, 11-036 Zamość', 8, 20, 55)
-INSERT INTO Restauracja VALUES (6, 'U Jakuba', 'al.  Kania 842, 72-451 Wojkowice', 8, 19, 65)
-INSERT INTO Restauracja VALUES (7, 'U Marzenny', 'al.  Flak 581, 07-618 Choroszcz', 8, 21, 70)
-INSERT INTO Restauracja VALUES (8, 'U Patrycji', 'ul.  Kosiński 51704, 63-055 Nowogród', 8, 21, 36)
-INSERT INTO Restauracja VALUES (9, 'U Filipa', 'ul.  Jezierski 1350, 35-077 Boguszów-Gorce', 7, 21, 67)
-INSERT INTO Restauracja VALUES (10, 'U Michała', 'al.  Rudzki 16725, 27-663 Puławy', 7, 21, 58)
-INSERT INTO Restauracja VALUES (11, 'U Gabriela', 'ul.  Pilch 057, 94-400 Wasilków', 7, 21, 79)
-INSERT INTO Restauracja VALUES (12, 'U Szymona', 'ul.  Nowicki 93321, 92-839 Łazy', 7, 20, 58)
-INSERT INTO Restauracja VALUES (13, 'U Anieli', 'al.  Burzyński 537, 35-185 Siechnice', 8, 20, 64)
+INSERT INTO Restauracje VALUES (1, 'U Romka', 'al.  Bednarczyk 272, 37-477 Złocieniec', 8, 19, 55);
+INSERT INTO Restauracje VALUES (2, 'U Tomka', 'al.  Żurek 117, 07-417 Boguszów-Gorce', 7, 20, 75);
+INSERT INTO Restauracje VALUES (3, 'U Grzesia', 'al.  Kłos 4937, 20-081 Kartuzy', 7, 20, 64);
+INSERT INTO Restauracje VALUES (4, 'U Fabiana', 'ul.  Marczak 35780, 00-959 Węgorzyno', 8, 19, 77);
+INSERT INTO Restauracje VALUES (5, 'U Maćka', 'ul.  Falkowski 76248, 01-255 Jasień', 8, 20, 53);
+INSERT INTO Restauracje VALUES (6, 'U Jakuba', 'al.  Socha 4373, 95-769 Zduńska Wola', 8, 21, 39);
+INSERT INTO Restauracje VALUES (7, 'U Marzenny', 'al.  Brzozowski 75227, 77-434 Szczecinek', 7, 21, 33);
+INSERT INTO Restauracje VALUES (8, 'U Patrycji', 'ul.  Góral 3100, 39-250 Imielin', 7, 21, 31);
+INSERT INTO Restauracje VALUES (9, 'U Filipa', 'al.  Woś 82900, 90-375 Serock', 8, 21, 22);
+INSERT INTO Restauracje VALUES (10, 'U Michała', 'ul.  Długosz 0691, 46-004 Olsztynek', 8, 19, 49);
+INSERT INTO Restauracje VALUES (11, 'U Gabriela', 'al.  Tokarski 5969, 92-903 Sępopol', 8, 21, 38);
+INSERT INTO Restauracje VALUES (12, 'U Szymona', 'al.  Rudnicki 3173, 14-258 Olkusz', 7, 21, 24);
+INSERT INTO Restauracje VALUES (13, 'U Anieli', 'ul.  Czyż 28491, 47-343 Brzeszcze', 8, 19, 56);
 
 --------------
 -- KELNERZY --
 --------------
 
-INSERT INTO Kelner VALUES (1, 'Krakowiak', '—', 2012-09-01, 1)
-INSERT INTO Kelner VALUES (2, 'Zych', 'Filipa', 2012-09-01, 1)
-INSERT INTO Kelner VALUES (3, 'Herman', 'Agnieszka', 2012-09-01, 1)
-INSERT INTO Kelner VALUES (4, 'Jóźwiak', 'Tobiasz', 2012-09-01, 1)
-INSERT INTO Kelner VALUES (5, 'Krukowski', 'Lucja', 2012-09-01, 1)
-INSERT INTO Kelner VALUES (6, 'Różański', 'Gabriela', 2012-09-01, 1)
-INSERT INTO Kelner VALUES (7, 'Urbaniak', 'Zachariasz', 2012-09-01, 2)
-INSERT INTO Kelner VALUES (8, 'Borowski', 'Anatol', 2012-09-01, 2)
-INSERT INTO Kelner VALUES (9, 'Lewandowski', 'Dawid', 2012-09-01, 2)
-INSERT INTO Kelner VALUES (10, 'Kisiel', 'Jeremiasz', 2012-09-01, 2)
-INSERT INTO Kelner VALUES (11, 'Więcek', 'Nazariusz', 2012-09-01, 2)
-INSERT INTO Kelner VALUES (12, 'Piłat', 'Jakubina', 2012-09-01, 2)
-INSERT INTO Kelner VALUES (13, 'Dziuba', 'Rafał', 2012-09-01, 2)
-INSERT INTO Kelner VALUES (14, 'Janowski', 'Ksawery', 2012-09-01, 2)
-INSERT INTO Kelner VALUES (15, 'Przybylski', 'Ofelia', 2012-09-01, 3)
-INSERT INTO Kelner VALUES (16, 'Świątek', 'Jozue', 2012-09-01, 3)
-INSERT INTO Kelner VALUES (17, 'Adamiak', 'Gerald', 2012-09-01, 3)
-INSERT INTO Kelner VALUES (18, 'Włodarski', 'Aleksy', 2012-09-01, 3)
-INSERT INTO Kelner VALUES (19, 'Tkaczyk', 'Amabela', 2012-09-01, 3)
-INSERT INTO Kelner VALUES (20, 'Cichy', '—', 2012-09-01, 3)
-INSERT INTO Kelner VALUES (21, 'Lewicki', 'Edgar', 2012-09-01, 3)
-INSERT INTO Kelner VALUES (22, 'Chojnowski', 'Izabela', 2012-09-01, 3)
-INSERT INTO Kelner VALUES (23, 'Chrzanowski', 'Kornelia', 2012-09-01, 4)
-INSERT INTO Kelner VALUES (24, 'Raczyński', 'Tomasz', 2012-09-01, 4)
-INSERT INTO Kelner VALUES (25, 'Czajka', 'Natanael', 2012-09-01, 4)
-INSERT INTO Kelner VALUES (26, 'Kaczyński', 'Ilona', 2012-09-01, 4)
-INSERT INTO Kelner VALUES (27, 'Marzec', 'Marianna', 2012-09-01, 4)
-INSERT INTO Kelner VALUES (28, 'Buczkowski', 'Andżelika', 2012-09-01, 4)
-INSERT INTO Kelner VALUES (29, 'Raczyński', 'Cyra', 2012-09-01, 5)
-INSERT INTO Kelner VALUES (30, 'Milewski', 'August', 2012-09-01, 5)
-INSERT INTO Kelner VALUES (31, 'Adamek', 'Terencjusz', 2012-09-01, 5)
-INSERT INTO Kelner VALUES (32, 'Szulc', 'Kamila', 2012-09-01, 5)
-INSERT INTO Kelner VALUES (33, 'Bednarski', 'Jeremiasz', 2012-09-01, 5)
-INSERT INTO Kelner VALUES (34, 'Szulc', 'Julia', 2012-09-01, 5)
-INSERT INTO Kelner VALUES (35, 'Żuk', 'Florencja', 2012-09-01, 5)
-INSERT INTO Kelner VALUES (36, 'Kuczyński', 'Konstanty', 2012-09-01, 6)
-INSERT INTO Kelner VALUES (37, 'Motyka', 'Malwina', 2012-09-01, 6)
-INSERT INTO Kelner VALUES (38, 'Żmuda', 'Feliks', 2012-09-01, 6)
-INSERT INTO Kelner VALUES (39, 'Filipek', 'Klara', 2012-09-01, 6)
-INSERT INTO Kelner VALUES (40, 'Iwański', 'Paweł', 2012-09-01, 6)
-INSERT INTO Kelner VALUES (41, 'Karwowski', 'Korneli', 2012-09-01, 6)
-INSERT INTO Kelner VALUES (42, 'Panek', 'Laurencjusz', 2012-09-01, 6)
-INSERT INTO Kelner VALUES (43, 'Strzelczyk', 'Greta', 2012-09-01, 6)
-INSERT INTO Kelner VALUES (44, 'Kołodziejski', 'Marcin', 2012-09-01, 7)
-INSERT INTO Kelner VALUES (45, 'Głogowski', 'Samson', 2012-09-01, 7)
-INSERT INTO Kelner VALUES (46, 'Skowron', 'Seweryn', 2012-09-01, 7)
-INSERT INTO Kelner VALUES (47, 'Bednarczyk', 'Laura', 2012-09-01, 7)
-INSERT INTO Kelner VALUES (48, 'Sikora', 'Wiktor', 2012-09-01, 7)
-INSERT INTO Kelner VALUES (49, 'Adamowicz', 'Izajasz', 2012-09-01, 7)
-INSERT INTO Kelner VALUES (50, 'Wysocki', 'Hugo', 2012-09-01, 7)
-INSERT INTO Kelner VALUES (51, 'Paluch', 'Wilhelmina', 2012-09-01, 7)
-INSERT INTO Kelner VALUES (52, 'Jarząbek', 'Izolda', 2012-09-01, 7)
-INSERT INTO Kelner VALUES (53, 'Lesiak', 'Brajan', 2012-09-01, 8)
-INSERT INTO Kelner VALUES (54, 'Świerczyński', 'Błażej', 2012-09-01, 8)
-INSERT INTO Kelner VALUES (55, 'Kaczmarski', 'Roderyk', 2012-09-01, 8)
-INSERT INTO Kelner VALUES (56, 'Kobus', 'Michał', 2012-09-01, 8)
-INSERT INTO Kelner VALUES (57, 'Rogala', 'Nazariusz', 2012-09-01, 8)
-INSERT INTO Kelner VALUES (58, 'Szymański', 'Mikołaj', 2012-09-01, 9)
-INSERT INTO Kelner VALUES (59, 'Falkowski', 'Innocenty', 2012-09-01, 9)
-INSERT INTO Kelner VALUES (60, 'Knapik', 'Pantaleon', 2012-09-01, 9)
-INSERT INTO Kelner VALUES (61, 'Piechota', 'Ambroży', 2012-09-01, 9)
-INSERT INTO Kelner VALUES (62, 'Cybulski', 'Galfryd', 2012-09-01, 9)
-INSERT INTO Kelner VALUES (63, 'Wiącek', 'Cezary', 2012-09-01, 9)
-INSERT INTO Kelner VALUES (64, 'Lach', 'Dorian', 2012-09-01, 9)
-INSERT INTO Kelner VALUES (65, 'Kalisz', 'Ernest', 2012-09-01, 9)
-INSERT INTO Kelner VALUES (66, 'Buczyński', 'Antoni', 2012-09-01, 9)
-INSERT INTO Kelner VALUES (67, 'Dudzik', 'Małgorzata', 2012-09-01, 10)
-INSERT INTO Kelner VALUES (68, 'Maciejewski', 'Agata', 2012-09-01, 10)
-INSERT INTO Kelner VALUES (69, 'Chrzanowski', 'Dina', 2012-09-01, 10)
-INSERT INTO Kelner VALUES (70, 'Kuc', 'Edward', 2012-09-01, 10)
-INSERT INTO Kelner VALUES (71, 'Kogut', 'Liza', 2012-09-01, 10)
-INSERT INTO Kelner VALUES (72, 'Skowroński', 'Eugeniusz', 2012-09-01, 10)
-INSERT INTO Kelner VALUES (73, 'Frąckowiak', 'Katarzyna', 2012-09-01, 10)
-INSERT INTO Kelner VALUES (74, 'Raczyński', 'Joachim', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (75, 'Maciejewski', 'Salomon', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (76, 'Budzyński', 'Konstantyn', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (77, 'Nowiński', 'Franciszka', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (78, 'Skowronek', 'Roksana', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (79, 'Sobczyk', 'Leon', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (80, 'Partyka', 'Maria', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (81, 'Polak', 'Krzysztof', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (82, 'Kwaśniewski', 'Sylwester', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (83, 'Filipiak', 'Izajasz', 2012-09-01, 11)
-INSERT INTO Kelner VALUES (84, 'Banaś', 'Irena', 2012-09-01, 12)
-INSERT INTO Kelner VALUES (85, 'Górniak', 'Izolda', 2012-09-01, 12)
-INSERT INTO Kelner VALUES (86, 'Majcher', 'Laurentyna', 2012-09-01, 12)
-INSERT INTO Kelner VALUES (87, 'Sokół', 'Michał', 2012-09-01, 12)
-INSERT INTO Kelner VALUES (88, 'Kawa', 'Magnus', 2012-09-01, 12)
-INSERT INTO Kelner VALUES (89, 'Burzyński', 'Krystyna', 2012-09-01, 12)
-INSERT INTO Kelner VALUES (90, 'Kozieł', 'Barbara', 2012-09-01, 12)
-INSERT INTO Kelner VALUES (91, 'Wyszyński', 'Gilbert', 2012-09-01, 13)
-INSERT INTO Kelner VALUES (92, 'Kawecki', 'Archibald', 2012-09-01, 13)
-INSERT INTO Kelner VALUES (93, 'Żebrowski', 'Łukasz', 2012-09-01, 13)
-INSERT INTO Kelner VALUES (94, 'Szyszka', 'Stanisław', 2012-09-01, 13)
-INSERT INTO Kelner VALUES (95, 'Dąbrowski', 'Samuel', 2012-09-01, 13)
-INSERT INTO Kelner VALUES (96, 'Budzyński', 'Weronika', 2012-09-01, 13)
-INSERT INTO Kelner VALUES (97, 'Bożek', 'Salwator', 2012-09-01, 13)
-INSERT INTO Kelner VALUES (98, 'Piątkowski', 'Rachela', 2012-09-01, 13)
+INSERT INTO Kelnerzy VALUES (1, 'Warchoł', 'Ireneusz', 2012-09-01, 1);
+INSERT INTO Kelnerzy VALUES (2, 'Modzelewski', 'Janusz', 2012-09-01, 1);
+INSERT INTO Kelnerzy VALUES (3, 'Żukowski', 'Luiza', 2012-09-01, 1);
+INSERT INTO Kelnerzy VALUES (4, 'Kostecki', 'Feliks', 2012-09-01, 1);
+INSERT INTO Kelnerzy VALUES (5, 'Niedzielski', 'Eliasz', 2012-09-01, 1);
+INSERT INTO Kelnerzy VALUES (6, 'Michałek', 'Maksymilian', 2012-09-01, 1);
+INSERT INTO Kelnerzy VALUES (7, 'Kuczyński', 'Cecylia', 2012-09-01, 1);
+INSERT INTO Kelnerzy VALUES (8, 'Świderski', 'Maja', 2012-09-01, 2);
+INSERT INTO Kelnerzy VALUES (9, 'Kotowski', 'Gertruda', 2012-09-01, 2);
+INSERT INTO Kelnerzy VALUES (10, 'Romanowski', 'Juliusz', 2012-09-01, 2);
+INSERT INTO Kelnerzy VALUES (11, 'Skowron', 'Salomon', 2012-09-01, 2);
+INSERT INTO Kelnerzy VALUES (12, 'Bieńkowski', 'Tobiasz', 2012-09-01, 2);
+INSERT INTO Kelnerzy VALUES (13, 'Madej', 'Tamara', 2012-09-01, 2);
+INSERT INTO Kelnerzy VALUES (14, 'Stefaniak', 'Józef', 2012-09-01, 2);
+INSERT INTO Kelnerzy VALUES (15, 'Jurek', 'Edgar', 2012-09-01, 2);
+INSERT INTO Kelnerzy VALUES (16, 'Mrozek', 'Fabian', 2012-09-01, 2);
+INSERT INTO Kelnerzy VALUES (17, 'Tomczyk', 'Klemens', 2012-09-01, 3);
+INSERT INTO Kelnerzy VALUES (18, 'Zawada', 'Lidia', 2012-09-01, 3);
+INSERT INTO Kelnerzy VALUES (19, 'Kuś', 'Damian', 2012-09-01, 3);
+INSERT INTO Kelnerzy VALUES (20, 'Bilski', 'Cezary', 2012-09-01, 3);
+INSERT INTO Kelnerzy VALUES (21, 'Cygan', 'Rudolf', 2012-09-01, 3);
+INSERT INTO Kelnerzy VALUES (22, 'Wolski', 'Antoni', 2012-09-01, 3);
+INSERT INTO Kelnerzy VALUES (23, 'Skowronek', 'Korneliusz', 2012-09-01, 3);
+INSERT INTO Kelnerzy VALUES (24, 'Wawrzyniak', 'Hieronim', 2012-09-01, 3);
+INSERT INTO Kelnerzy VALUES (25, 'Wnuk', 'Orestes', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (26, 'Karpiński', 'Sylwester', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (27, 'Wiśniewski', 'Albert', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (28, 'Kisiel', 'Anatol', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (29, 'Dobrowolski', 'Mojżesz', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (30, 'Czerwiński', 'Kira', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (31, 'Mrozek', 'Nadzieja', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (32, 'Flak', 'Jerzy', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (33, 'Białek', 'Sylwester', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (34, 'Cieśla', 'Gonsalwy', 2012-09-01, 4);
+INSERT INTO Kelnerzy VALUES (35, 'Ruciński', 'Edgar', 2012-09-01, 5);
+INSERT INTO Kelnerzy VALUES (36, 'Rybicki', 'Igor', 2012-09-01, 5);
+INSERT INTO Kelnerzy VALUES (37, 'Rybicki', 'Tymoteusz', 2012-09-01, 5);
+INSERT INTO Kelnerzy VALUES (38, 'Gołębiowski', 'Marcin', 2012-09-01, 5);
+INSERT INTO Kelnerzy VALUES (39, 'Bieńkowski', 'Oskar', 2012-09-01, 5);
+INSERT INTO Kelnerzy VALUES (40, 'Skowronek', 'Helena', 2012-09-01, 5);
+INSERT INTO Kelnerzy VALUES (41, 'Murawski', 'Jeremi', 2012-09-01, 5);
+INSERT INTO Kelnerzy VALUES (42, 'Dominiak', 'Karolina', 2012-09-01, 6);
+INSERT INTO Kelnerzy VALUES (43, 'Romanowski', 'Dorian', 2012-09-01, 6);
+INSERT INTO Kelnerzy VALUES (44, 'Wesołowski', 'Paula', 2012-09-01, 6);
+INSERT INTO Kelnerzy VALUES (45, 'Pluta', 'Jakubina', 2012-09-01, 6);
+INSERT INTO Kelnerzy VALUES (46, 'Pałka', 'Ilona', 2012-09-01, 6);
+INSERT INTO Kelnerzy VALUES (47, 'Błaszczyk', 'Benedykt', 2012-09-01, 7);
+INSERT INTO Kelnerzy VALUES (48, 'Wójcicki', 'Robert', 2012-09-01, 7);
+INSERT INTO Kelnerzy VALUES (49, 'Madej', 'Łukasz', 2012-09-01, 7);
+INSERT INTO Kelnerzy VALUES (50, 'Sosnowski', 'Juliusz', 2012-09-01, 7);
+INSERT INTO Kelnerzy VALUES (51, 'Kujawa', 'Filipa', 2012-09-01, 7);
+INSERT INTO Kelnerzy VALUES (52, 'Michałowski', 'Wawrzyniec', 2012-09-01, 8);
+INSERT INTO Kelnerzy VALUES (53, 'Maślanka', 'Bruno', 2012-09-01, 8);
+INSERT INTO Kelnerzy VALUES (54, 'Staniszewski', 'Maja', 2012-09-01, 8);
+INSERT INTO Kelnerzy VALUES (55, 'Trzeciak', 'Adelajda', 2012-09-01, 8);
+INSERT INTO Kelnerzy VALUES (56, 'Rogalski', 'Maksymilian', 2012-09-01, 9);
+INSERT INTO Kelnerzy VALUES (57, 'Adamiec', 'Brygida', 2012-09-01, 9);
+INSERT INTO Kelnerzy VALUES (58, 'Rudnicki', 'Oskar', 2012-09-01, 9);
+INSERT INTO Kelnerzy VALUES (59, 'Murawski', 'Wiara', 2012-09-01, 10);
+INSERT INTO Kelnerzy VALUES (60, 'Cebula', 'Konstancja', 2012-09-01, 10);
+INSERT INTO Kelnerzy VALUES (61, 'Wojtas', 'Leon', 2012-09-01, 10);
+INSERT INTO Kelnerzy VALUES (62, 'Domański', 'Filipa', 2012-09-01, 10);
+INSERT INTO Kelnerzy VALUES (63, 'Buczkowski', 'Angela', 2012-09-01, 10);
+INSERT INTO Kelnerzy VALUES (64, 'Błaszczyk', 'Ksenia', 2012-09-01, 10);
+INSERT INTO Kelnerzy VALUES (65, 'Urbański', 'Aaron', 2012-09-01, 11);
+INSERT INTO Kelnerzy VALUES (66, 'Białek', 'Innocenty', 2012-09-01, 11);
+INSERT INTO Kelnerzy VALUES (67, 'Kiełbasa', 'Wilhelmina', 2012-09-01, 11);
+INSERT INTO Kelnerzy VALUES (68, 'Ciesielski', 'Osmund', 2012-09-01, 11);
+INSERT INTO Kelnerzy VALUES (69, 'Wawrzyniak', 'Paula', 2012-09-01, 11);
+INSERT INTO Kelnerzy VALUES (70, 'Ptak', 'Róża', 2012-09-01, 12);
+INSERT INTO Kelnerzy VALUES (71, 'Dąbrowski', 'Paweł', 2012-09-01, 12);
+INSERT INTO Kelnerzy VALUES (72, 'Iwański', 'Arkadiusz', 2012-09-01, 12);
+INSERT INTO Kelnerzy VALUES (73, 'Adamczak', 'Helena', 2012-09-01, 13);
+INSERT INTO Kelnerzy VALUES (74, 'Gajda', 'Monika', 2012-09-01, 13);
+INSERT INTO Kelnerzy VALUES (75, 'Przybyła', 'Ofelia', 2012-09-01, 13);
+INSERT INTO Kelnerzy VALUES (76, 'Michałek', 'Eustracjusz', 2012-09-01, 13);
+INSERT INTO Kelnerzy VALUES (77, 'Janas', 'Maurycy', 2012-09-01, 13);
+INSERT INTO Kelnerzy VALUES (78, 'Antczak', 'Grzegorz', 2012-09-01, 13);
+INSERT INTO Kelnerzy VALUES (79, 'Paluch', 'Rachela', 2012-09-01, 13);
+
+---------------
+-- KATEGORIE --
+---------------
+
+INSERT INTO KATEGORIE VALUES ('alkohole', 'alkohole', 'palące w ustach trunki oraz te wyrafinowane - wszystko czego pragnie alkoholowy smakosz');
+INSERT INTO KATEGORIE VALUES ('napoje', 'napoje', 'coś do wypicia na ciepło i na zimno');
+INSERT INTO KATEGORIE VALUES ('przekaski', 'przekąski', 'podawane przed obiadem');
+INSERT INTO KATEGORIE VALUES ('pizza', 'pizza', 'smaczna pizza');
+INSERT INTO KATEGORIE VALUES ('przystZimne', 'Przystawki Zimne', 'na zimno');
+INSERT INTO KATEGORIE VALUES ('przystGorace', 'Przystawki Gorące', 'na gorąco');
+INSERT INTO KATEGORIE VALUES ('zupy', 'Zupy', 'wszelakie zupy');
+INSERT INTO KATEGORIE VALUES ('makarony', 'Makarony', 'pełen asortyment włoskich makaronów - wszystkie aldente');
+INSERT INTO KATEGORIE VALUES ('glowne', 'Dania Główne', '');
+INSERT INTO KATEGORIE VALUES ('desery', 'Desery', '');
+INSERT INTO KATEGORIE VALUES ('salatki', 'Sałatki', '');
+
+-----------
+-- DANIE --
+-----------
+
+INSERT INTO DANIA VALUES ('1', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('2', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('3', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('4', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('5', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('6', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('7', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('8', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('9', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('10', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('11', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('12', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('13', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('14', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('15', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('16', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('17', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('18', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('19', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('20', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('21', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('22', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('23', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('24', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('25', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('26', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('27', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('28', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('29', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('30', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('31', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('32', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('33', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('34', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('35', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('36', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('37', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('38', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('39', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('40', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('41', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('42', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('43', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('44', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('45', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('46', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('47', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('48', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('49', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('50', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('51', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('52', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('53', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('54', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('55', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('56', 'Sałatki', '');
+INSERT INTO DANIA VALUES ('57', 'Sałatki', '');
