@@ -121,6 +121,7 @@ generateDailyOrders = (date, daySalesIndex, pushTo)->
 			data_platnosci: new Date(orderTime).addMinutes makeDuration
 			kelner: Utils.random.arrayItem restaurant.kelnerzy
 			numer_stolika: Utils.random.integer restaurant.liczba_miejsc
+			platnosc: Utils.random.arrayItem config.erd.payments
 		#
 		#
 		DailyOrder.push dailyOrder

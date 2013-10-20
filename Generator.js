@@ -82,7 +82,7 @@
       kelner = {
         id: ERD.id(Kelner),
         restauracja: restauracja,
-        imie: charlatan.Name.name(),
+        imie: charlatan.Name.firstName(),
         nazwisko: charlatan.Name.lastName(),
         data_zatrudnienia: config.erd.hireDate
       };

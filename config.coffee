@@ -19,6 +19,23 @@ exports.config =
 			"U Anieli"
 		]
 		hireDate: "2012-09-01"
+		payments: [
+			#większość płaci gotówką
+			""
+			""
+			""
+			""
+			""
+			""
+			""
+			""
+			"MBank"
+			"Alior Bank"
+			"PKO"
+			"Deutsche Bank"
+			"Credit Agricole"
+			"Kredyt Bank"
+		]
 		restaurant:
 			simStart: new Date('2006-10-24')
 			simEnd: new Date('2010-09-27')
@@ -26,7 +43,7 @@ exports.config =
 			closeTime: [19, 22]
 			minCapacity: 22
 			maxCapacity: 82
-			avgOrderSize:4
+			avgOrderSize: 4
 			minWaitMinutes: 5 # minimum minut czeania na jedną pozycję w zamówieniu
 			maxWaitMinutes: 12 # maximum minut czeania na jedną pozycję w zamówieniu
 			initialSalesRatio: 0.56 # kategoria w danej restauracji ma sprzedaż initialSalesRatio*liczba_miejsc
