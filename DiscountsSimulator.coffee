@@ -1,6 +1,10 @@
 dateUtils = require 'date-utils'
-print=console.log
+fs=require 'fs'
+xml=fs.readFile './xmlSource.xml'
+print = console.log
 #
-
+dostawcy =
+	uslugi: []
+	znizki: []
 exports.simulate = (config, erd)->
-	null
+	print xml

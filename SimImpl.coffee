@@ -67,7 +67,6 @@ exports.simRange = (range, erd, config)->
 
 simChange = (change)->
 #	console.log "sim change: #{change.when.toDayString()} #{change.category}"
-
 	for kategoria in Kategoria when change.category.test kategoria.id
 #		console.log "SIM CHANGE W KATEGORII " + kategoria.id
 		kategoria.dailySaleBase += change.addition / change.duration
@@ -94,7 +93,7 @@ generateDailyOrders = (date, daySalesIndex)->
 	sumSales = remainingSales.reduce (sum, sale)->
 		sum + sale.numSales
 	, 0
-#	print "pozostało do wykorzystania: #{sale.kategoria.id}: #{sale.numSales}" for sale in remainingSales
+	#	print "pozostało do wykorzystania: #{sale.kategoria.id}: #{sale.numSales}" for sale in remainingSales
 	avgOrderSize = config.erd.restaurant.avgOrderSize
 	numOrders = Math.round(sumSales / avgOrderSize)
 	#najpierw generuj same zamówienia
@@ -117,11 +116,12 @@ generateDailyOrders = (date, daySalesIndex)->
 			kelner: Utils.random.arrayItem restaurant.kelnerzy
 			numer_stolika: Utils.random.integer restaurant.liczba_miejsc
 			platnosc: Utils.random.arrayItem config.erd.payments
+			kod_rabatu: null
 			pozycje: {} # kluczem jest id produktu, wartością jest ref do dania oraz iloć porcji oraz cena/porcja
-			toString:->
-				str= @data_platnosci.toTimeString()+" odebrane przez: #{@kelner.imie} #{@kelner.nazwisko}"
+			toString: ->
+				str = @data_platnosci.toTimeString() + " odebrane przez: #{@kelner.imie} #{@kelner.nazwisko}"
 				for key, poz of @pozycje
-					str+= "\n\t- #{poz.danie.nazwa}: #{poz.porcja}"
+					str += "\n\t- #{poz.danie.nazwa}: #{poz.porcja}"
 
 				return str
 		#
@@ -134,7 +134,7 @@ generateDailyOrders = (date, daySalesIndex)->
 		0
 	# mamy puste zamówienia oraz liczniki kategorii
 	# wsadzaj losowe danie do losowego zamówienia
-	iloscDodanychDan=0
+	iloscDodanychDan = 0
 	dodajDanieDoZamowienia = (danie, zamowienie)->
 		iloscDodanychDan++
 		id = danie.id
@@ -163,15 +163,15 @@ generateDailyOrders = (date, daySalesIndex)->
 	while remainingSales.length
 		dodajDanieDoZamowienia wybierzJakiesDanie(), Utils.random.arrayItem DailyOrder
 
-#	print dailyOrder.toString() for dailyOrder in DailyOrder
-#	print 'dan sprzedanych: ', iloscDodanychDan, 'sum sales: ',sumSales
+	#	print dailyOrder.toString() for dailyOrder in DailyOrder
+	#	print 'dan sprzedanych: ', iloscDodanychDan, 'sum sales: ',sumSales
 	for dailyOrder in DailyOrder
 		erd.Zamowienie.push dailyOrder
-		pozycjeTab=[]
-		c=0
+		pozycjeTab = []
+		c = 0
 		for id, poz of dailyOrder.pozycje
 			pozycjeTab.push poz
 			erd.ZamowienieProdukt.push poz
-			poz.nr=c
+			poz.nr = c
 			c++
-		dailyOrder.pozycje=pozycjeTab
+		dailyOrder.pozycje = pozycjeTab
