@@ -28,25 +28,30 @@ exports.config =
 			maxCapacity: 82
 			numSales: 23 # z każdej
 			swing: #dzienny przyrost zamówień, tutaj widać tendencję ciągłego przyrostu
-				lowLimit: 0.999 #minimalnie spadek dzienny 1 promil
-				highLimit: 1.002 # maksymalnie wzrost dzienny 2 promile
+				lowLimit: 0.998 #minimalnie spadek dzienny 1 promil
+				highLimit: 1.0035 # maksymalnie wzrost dzienny 2 promile
+				addFuncion: (day)->
+					3 * (Math.sin(0.3 * day) + 0.3 * Math.sin(day * 1.446)) * Math.sin(day / 20) * Math.sin(day / 100)
 			changes: [
 				{
 				#święta Bożego Narodzenia, ludzie jedzą w domu z rodziną
 					when: new Date('2009-12-04')
-					ratio: 0.6
 					category: /.*/
+					addition: -30
+					duration: 10 # przez tyle dni będzie się zmieniać o addition/duration
 				}
 				{
 				#po sezonie świątecznym, ludzie wracają do restauracji
 					when: new Date('2010-01-04')
-					ratio: 1/0.6
 					category: /.*/
+					addition: 30
+					duration: 5
 				}
 				{
-					#wprowadzono zniżki na pizze
+				#wprowadzono zniżki na pizze
 					when: new Date('2007-04-03')
-					ratio: 1.7
 					category: /pizza/
+					addition: 38
+					duration: 18
 				}
 			]

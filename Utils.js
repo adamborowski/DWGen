@@ -27,6 +27,14 @@
     return 0;
   };
 
+  Math.log = (function() {
+    var log;
+    log = Math.log;
+    return function(n, base) {
+      return log(n) / (base ? log(base) : 1);
+    };
+  })();
+
   names = {
     food: ["Restaurante", "Pizzerina", "U Tobiasza", "Grzane odgrzewane", "McTusk", "Swojski zapach", "Klasyka smaku"],
     entertainment: ["3'Ball Center", "U7", "Centrum Handlowe Beta"],
