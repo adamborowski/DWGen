@@ -36,6 +36,11 @@ names =
 randomParts = "super pos hub muss hajo lobo hyper uber kalo new rich wed mon ptero tera giga mini gust serwis strefa zatoka kraina eden".split " "
 _generatedCompanies = {}
 utils =
+	array:
+		removeUnordered: (array, item)->
+			index=array.indexOf(item)
+			array[index]=array[array.length-1] #podmiana tego z końca z tym usuwanym ze środka
+			array.pop()
 	random:
 		integer: (from, to = null)->
 			unless from? # jeśli nie podano from, to chodzi o zakres (0,..)

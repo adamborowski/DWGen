@@ -73,4 +73,5 @@ for name, i in config.erd.restaurantNames
 #console.log("Kategoria:", Kategoria);
 #console.log("Danie:", Danie);
 simulator.simulate config, ERD
-
+presenter= require './Presenter.js'
+presenter.writeSQL ERD

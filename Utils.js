@@ -46,6 +46,14 @@
   _generatedCompanies = {};
 
   utils = {
+    array: {
+      removeUnordered: function(array, item) {
+        var index;
+        index = array.indexOf(item);
+        array[index] = array[array.length - 1];
+        return array.pop();
+      }
+    },
     random: {
       integer: function(from, to) {
         if (to == null) {

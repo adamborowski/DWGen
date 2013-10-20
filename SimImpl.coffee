@@ -1,5 +1,5 @@
 print = console.log
-Utils=require './Utils.js'
+Utils = require './Utils.js'
 #
 simulation = []
 mscPerDay = 1000 * 60 * 60 * 24
@@ -108,20 +108,21 @@ generateDailyOrders = (date, daySalesIndex, pushTo)->
 	genTime = ->
 		hh = Utils.random.integer(restaurantOpen, restaurantClose)
 		mm = Utils.random.integer(0, 60)
-		genDate=new Date(date)
+		genDate = new Date(date)
 		genDate.setHours hh
 		genDate.setMinutes mm
 		return genDate
 	DailyOrder = []
 	for i in [1..numOrders]
-		orderTime =genTime()
-		makeDuration=Utils.random.float config.erd.restaurant.minWaitMinutes, config.erd.restaurant.maxWaitMinutes
+		orderTime = genTime()
+		makeDuration = Utils.random.float config.erd.restaurant.minWaitMinutes, config.erd.restaurant.maxWaitMinutes
 		dailyOrder =
 			data_przyjecia: orderTime
 			data_platnosci: new Date(orderTime).addMinutes makeDuration
 			kelner: Utils.random.arrayItem restaurant.kelnerzy
 			numer_stolika: Utils.random.integer restaurant.liczba_miejsc
 			platnosc: Utils.random.arrayItem config.erd.payments
+			pozycje: {} # kluczem jest id produktu, wartością jest ref do dania oraz iloć porcji oraz cena/porcja
 		#
 		#
 		DailyOrder.push dailyOrder
@@ -130,4 +131,34 @@ generateDailyOrders = (date, daySalesIndex, pushTo)->
 		return -1  if a.data_przyjecia < b.data_przyjecia
 		return 1  if a.data_przyjecia > b.data_przyjecia
 		0
-	print DailyOrder
+	# mamy puste zamówienia oraz liczniki kategorii
+	# wsadzaj losowe danie do losowego zamówienia
+	dodajDanieDoZamowienia = (danie, zamowienie)->
+		id = danie.id
+		if zamowienie.pozycje.hasOwnProperty id
+			zamowienie.pozycje.ilosc++
+		else
+			zamowienie.pozycje[id] =
+				danie: danie
+				zamowienie: zamowienie
+				cena: danie.cena
+				porcja: 1
+	wybierzJakiesDanie = ->
+		#wybierz jakąś kategorię
+		chosenCategory = Utils.random.arrayItem remainingSales
+		#wybierz danie z kategorii
+		chosenDish = Utils.random.arrayItem chosenCategory.kategoria.dania
+		# jeśli już ta kategoria jest pusta, to usuń ją z remaining
+		if chosenCategory.numSales == 0
+			Utils.array.removeUnordered(remainingSales, chosenCategory)
+		print chosenDish
+		return chosenDish
+	#na początku każde zamówienie musi mieć jedno jakieś danie
+#	for dailyOrder in DailyOrder
+#		dodajDanieDoZamowienia wybierzJakiesDanie(), dailyOrder
+	#potem mozna losowane dania dodawac do losowych zamówień
+	#	while remainingSales.length
+	#		dodajDanieDoZamowienia wybierzJakiesDanie(), Utils.random.arrayItem DailyOrder
+
+
+#	print DailyOrder

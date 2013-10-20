@@ -8,6 +8,7 @@
         <item url="file://$PROJECT_DIR$/SimImpl.js" />
         <item url="file://$PROJECT_DIR$/Data.js" />
         <item url="file://$PROJECT_DIR$/Utils.js" />
+        <item url="file://$PROJECT_DIR$/Presenter.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -17,6 +18,7 @@
       <root url="file://$PROJECT_DIR$/SimImpl.js" />
       <root url="file://$PROJECT_DIR$/Data.js" />
       <root url="file://$PROJECT_DIR$/Utils.js" />
+      <root url="file://$PROJECT_DIR$/Presenter.js" />
     </CLASSES>
     <SOURCES />
   </library>
