@@ -44,8 +44,8 @@ exports.config =
 			minCapacity: 22
 			maxCapacity: 82
 			avgOrderSize: 3
-			minWaitMinutes: 5 # minimum minut czeania na jedną pozycję w zamówieniu
-			maxWaitMinutes: 12 # maximum minut czeania na jedną pozycję w zamówieniu
+			minWaitMinutes: 30 # minimum minut czeania na jedną pozycję w zamówieniu
+			maxWaitMinutes: 60 # maximum minut czeania na jedną pozycję w zamówieniu
 			initialSalesRatio: 0.56 # kategoria w danej restauracji ma sprzedaż initialSalesRatio*liczba_miejsc
 			swing: #dzienny przyrost zamówień, tutaj widać tendencję ciągłego przyrostu
 				lowLimit: 0.998 #minimalnie spadek dzienny 1 promil

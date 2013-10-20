@@ -32,5 +32,12 @@ exports.writeSQL = (erd)->
   for d in erd.Danie
     line "INSERT INTO Dania VALUES (#{d.id}, #{d.kategoria.id}, '#{d.nazwa}', #{d.cena}, #{d.porcja}, '#{d.kategoria.jednostka}')"
 
-  save()
+  line header 'ZAMOWIENIA'
+  for z in erd.Zamowienie
+    line "INSERT INTO Dania VALUES (#{z.id}, #{z.kelner.id}, '#{z.data_przyjecia}', '#{z.data_platnosci}', #{z.numer_stolika}, 'ABCDEFGHIJKLM', '#{z.platnosc}')"
 
+  line header 'ZAMOWIENIA_DANIA'
+  for zp in erd.ZamowienieProdukt
+    line "INSERT INTO Dania VALUES (#{zp.zamowienie.id}, #{zp.danie.id}, #{zp.porcja}, #{zp.cena})"
+
+  save()
