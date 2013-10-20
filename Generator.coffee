@@ -9,7 +9,8 @@ utils = require './Utils.js'
 charlatan = require 'charlatan'
 charlatan.setLocale 'pl'
 #
-simulator = require './SalesSimulator.js'
+salesSimulator = require './SalesSimulator.js'
+discountsSimulator = require './DiscountsSimulator.js'
 ################################################
 #--------- ETAP PIERWSZY ---- GENERACJA DANYCH z configu + elementy losowe
 #(--------- ETAP DRUGI ------- tworzenie reprezentacji, np w SQL)
@@ -68,10 +69,8 @@ for name, i in config.erd.restaurantNames
 		Kelner.push kelner
 		restauracja.kelnerzy.push kelner
 
-simulator.simulate config, ERD
-
-
-
+salesSimulator.simulate config, ERD
+discountsSimulator.simulate config, ERD
 
 
 #console.log("Restauracja:", Restauracja);
@@ -80,5 +79,5 @@ simulator.simulate config, ERD
 #console.log("Danie:", Danie);
 console.log("Zamowienie:", Zamowienie.length);
 console.log("ZamowienieProdukt:", ZamowienieProdukt.length);
-presenter= require './Presenter.js'
+presenter = require './Presenter.js'
 presenter.writeSQL ERD

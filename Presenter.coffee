@@ -25,6 +25,9 @@ exports.writeSQL = (erd)->
 	line header 'KATEGORIE'
 	for k in erd.Kategoria
 		line "INSERT INTO KATEGORIE VALUES ('#{k.id}', '#{k.nazwa}', '#{k.opis}');"
+	line header 'DANIE'
+	for d in erd.Danie
+		line "INSERT INTO DANIA VALUES ('#{d.id}', '#{k.nazwa}', '#{k.opis}');"
 	save()
 
 

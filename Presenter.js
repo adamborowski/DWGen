@@ -35,7 +35,7 @@
   };
 
   exports.writeSQL = function(erd) {
-    var k, r, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2;
+    var d, k, r, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3;
     line(header('RESTAURACJE'));
     _ref = erd.Restauracja;
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -53,6 +53,12 @@
     for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
       k = _ref2[_k];
       line("INSERT INTO KATEGORIE VALUES ('" + k.id + "', '" + k.nazwa + "', '" + k.opis + "');");
+    }
+    line(header('DANIE'));
+    _ref3 = erd.Danie;
+    for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
+      d = _ref3[_l];
+      line("INSERT INTO DANIA VALUES ('" + d.id + "', '" + k.nazwa + "', '" + k.opis + "');");
     }
     return save();
   };
