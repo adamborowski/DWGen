@@ -1,7 +1,7 @@
 fs = require 'fs'
 NAME = 'insert.sql'
 str = ""
-save = 	->
+save = ->
 	fs.remove NAME if fs.exists NAME
 	fs.writeFile NAME, str, (err) ->
 		if err

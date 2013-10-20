@@ -99,7 +99,7 @@ generateDailyOrders = (date, daySalesIndex, pushTo)->
 	sumSales = remainingSales.reduce (sum, sale)->
 		sum + sale.numSales
 	, 0
-	print "pozostało do wykorzystania: #{sale.kategoria.id}: #{sale.numSales}" for sale in remainingSales
+#	print "pozostało do wykorzystania: #{sale.kategoria.id}: #{sale.numSales}" for sale in remainingSales
 	avgOrderSize = config.erd.restaurant.avgOrderSize
 	numOrders = Math.round(sumSales / avgOrderSize)
 	#najpierw generuj same zamówienia
@@ -151,11 +151,12 @@ generateDailyOrders = (date, daySalesIndex, pushTo)->
 		# jeśli już ta kategoria jest pusta, to usuń ją z remaining
 		if chosenCategory.numSales == 0
 			Utils.array.removeUnordered(remainingSales, chosenCategory)
-		print chosenDish
+		print chosenCategory.kategoria.dania
+		print chosenCategory.kategoria.nazwa
 		return chosenDish
 	#na początku każde zamówienie musi mieć jedno jakieś danie
-#	for dailyOrder in DailyOrder
-#		dodajDanieDoZamowienia wybierzJakiesDanie(), dailyOrder
+	for dailyOrder in DailyOrder
+		dodajDanieDoZamowienia wybierzJakiesDanie(), dailyOrder
 	#potem mozna losowane dania dodawac do losowych zamówień
 	#	while remainingSales.length
 	#		dodajDanieDoZamowienia wybierzJakiesDanie(), Utils.random.arrayItem DailyOrder

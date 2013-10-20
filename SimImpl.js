@@ -133,7 +133,7 @@
   };
 
   generateDailyOrders = function(date, daySalesIndex, pushTo) {
-    var DailyOrder, avgOrderSize, dailyOrder, dodajDanieDoZamowienia, genTime, i, kategoria, makeDuration, numOrders, orderTime, remainingSales, restaurantClose, restaurantOpen, sale, sumSales, wybierzJakiesDanie, _i, _j, _len;
+    var DailyOrder, avgOrderSize, dailyOrder, dodajDanieDoZamowienia, genTime, i, kategoria, makeDuration, numOrders, orderTime, remainingSales, restaurantClose, restaurantOpen, sumSales, wybierzJakiesDanie, _i, _j, _len, _results;
     print("generate daily orders: " + (date.toDayString()));
     remainingSales = (function() {
       var _i, _len, _results;
@@ -150,10 +150,6 @@
     sumSales = remainingSales.reduce(function(sum, sale) {
       return sum + sale.numSales;
     }, 0);
-    for (_i = 0, _len = remainingSales.length; _i < _len; _i++) {
-      sale = remainingSales[_i];
-      print("pozostało do wykorzystania: " + sale.kategoria.id + ": " + sale.numSales);
-    }
     avgOrderSize = config.erd.restaurant.avgOrderSize;
     numOrders = Math.round(sumSales / avgOrderSize);
     restaurantOpen = restaurant.godzina_otwarcia;
@@ -168,7 +164,7 @@
       return genDate;
     };
     DailyOrder = [];
-    for (i = _j = 1; 1 <= numOrders ? _j <= numOrders : _j >= numOrders; i = 1 <= numOrders ? ++_j : --_j) {
+    for (i = _i = 1; 1 <= numOrders ? _i <= numOrders : _i >= numOrders; i = 1 <= numOrders ? ++_i : --_i) {
       orderTime = genTime();
       makeDuration = Utils.random.float(config.erd.restaurant.minWaitMinutes, config.erd.restaurant.maxWaitMinutes);
       dailyOrder = {
@@ -204,16 +200,23 @@
         };
       }
     };
-    return wybierzJakiesDanie = function() {
+    wybierzJakiesDanie = function() {
       var chosenCategory, chosenDish;
       chosenCategory = Utils.random.arrayItem(remainingSales);
       chosenDish = Utils.random.arrayItem(chosenCategory.kategoria.dania);
       if (chosenCategory.numSales === 0) {
         Utils.array.removeUnordered(remainingSales, chosenCategory);
       }
-      print(chosenDish);
+      print(chosenCategory.kategoria.dania);
+      print(chosenCategory.kategoria.nazwa);
       return chosenDish;
     };
+    _results = [];
+    for (_j = 0, _len = DailyOrder.length; _j < _len; _j++) {
+      dailyOrder = DailyOrder[_j];
+      _results.push(dodajDanieDoZamowienia(wybierzJakiesDanie(), dailyOrder));
+    }
+    return _results;
   };
 
 }).call(this);
