@@ -15,7 +15,7 @@
         closeTime: [19, 22],
         minCapacity: 22,
         maxCapacity: 82,
-        avgOrderSize: 4,
+        avgOrderSize: 3,
         minWaitMinutes: 5,
         maxWaitMinutes: 12,
         initialSalesRatio: 0.56,

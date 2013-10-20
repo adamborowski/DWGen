@@ -68,10 +68,17 @@ for name, i in config.erd.restaurantNames
 		Kelner.push kelner
 		restauracja.kelnerzy.push kelner
 
+simulator.simulate config, ERD
+
+
+
+
+
 #console.log("Restauracja:", Restauracja);
 #console.log("Kelner:", Kelner);
 #console.log("Kategoria:", Kategoria);
 #console.log("Danie:", Danie);
-simulator.simulate config, ERD
+console.log("Zamowienie:", Zamowienie.length);
+console.log("ZamowienieProdukt:", ZamowienieProdukt.length);
 presenter= require './Presenter.js'
 presenter.writeSQL ERD

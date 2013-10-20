@@ -15,6 +15,19 @@
     return "" + (this.getFullYear()) + "-" + m + "-" + d;
   };
 
+  Date.prototype.toTimeString = function() {
+    var hh, mm;
+    hh = this.getHours();
+    if (hh < 10) {
+      hh = "0" + hh;
+    }
+    mm = this.getMinutes();
+    if (mm < 10) {
+      mm = "0" + mm;
+    }
+    return "" + hh + ":" + mm;
+  };
+
   dateUtils = require('date-utils');
 
   compare = function(a, b) {

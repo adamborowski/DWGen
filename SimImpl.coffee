@@ -1,7 +1,6 @@
 print = console.log
 Utils = require './Utils.js'
 #
-simulation = []
 mscPerDay = 1000 * 60 * 60 * 24
 erd = undefined
 config = undefined
@@ -10,10 +9,8 @@ restaurantConfig = undefined
 swing = undefined
 restaurant = undefined
 #
-test = []
 testCategory = undefined
 
-orders = []
 
 #
 exports.init = (_config, _erd, _restaurant)->
@@ -22,7 +19,6 @@ exports.init = (_config, _erd, _restaurant)->
 	Kategoria = erd.Kategoria
 	restaurantConfig = config.erd.restaurant
 	swing = restaurantConfig.swing
-	test = []
 	restaurant = _restaurant
 	testCategory = Kategoria.filter((kat)->
 		kat.id == 'pizza'
@@ -55,7 +51,7 @@ exports.finish = ()->
 				console.log "Written to chart.png"
 
 exports.simRange = (range, erd, config)->
-	console.log("symulowanie rangi:", range.toString());
+#	console.log("symulowanie rangi:", range.toString());
 	rangeEnd = range.to
 	currentDate = new Date(range.from)
 	numDays = 0
@@ -70,7 +66,7 @@ exports.simRange = (range, erd, config)->
 	return
 
 simChange = (change)->
-	console.log "sim change: #{change.when.toDayString()} #{change.category}"
+#	console.log "sim change: #{change.when.toDayString()} #{change.category}"
 
 	for kategoria in Kategoria when change.category.test kategoria.id
 #		console.log "SIM CHANGE W KATEGORII " + kategoria.id
@@ -90,10 +86,9 @@ simDay = (date, erd)->
 		kategoria.daySales.push
 			date: new Date date
 			numSales: Math.floor(kategoria.dailySale)
-	generateDailyOrders date, Kategoria[0].daySales.length - 1, orders
-# generowanie zamówień, wejście i wyjście niezależne od całej symulacji
-generateDailyOrders = (date, daySalesIndex, pushTo)->
-	print "generate daily orders: #{date.toDayString()}"
+	generateDailyOrders date, Kategoria[0].daySales.length - 1
+generateDailyOrders = (date, daySalesIndex)->
+#	print "generate daily orders: #{date.toDayString()}"
 	#przejrzyj kategorie
 	remainingSales = ({kategoria: kategoria, numSales: kategoria.daySales[daySalesIndex].numSales} for kategoria in Kategoria)
 	sumSales = remainingSales.reduce (sum, sale)->
@@ -123,6 +118,12 @@ generateDailyOrders = (date, daySalesIndex, pushTo)->
 			numer_stolika: Utils.random.integer restaurant.liczba_miejsc
 			platnosc: Utils.random.arrayItem config.erd.payments
 			pozycje: {} # kluczem jest id produktu, wartością jest ref do dania oraz iloć porcji oraz cena/porcja
+			toString:->
+				str= @data_platnosci.toTimeString()+" odebrane przez: #{@kelner.imie} #{@kelner.nazwisko}"
+				for key, poz of @pozycje
+					str+= "\n\t- #{poz.danie.nazwa}: #{poz.porcja}"
+
+				return str
 		#
 		#
 		DailyOrder.push dailyOrder
@@ -133,10 +134,12 @@ generateDailyOrders = (date, daySalesIndex, pushTo)->
 		0
 	# mamy puste zamówienia oraz liczniki kategorii
 	# wsadzaj losowe danie do losowego zamówienia
+	iloscDodanychDan=0
 	dodajDanieDoZamowienia = (danie, zamowienie)->
+		iloscDodanychDan++
 		id = danie.id
-		if zamowienie.pozycje.hasOwnProperty id
-			zamowienie.pozycje.ilosc++
+		if zamowienie.pozycje[id]?
+			zamowienie.pozycje[id].porcja++
 		else
 			zamowienie.pozycje[id] =
 				danie: danie
@@ -149,17 +152,26 @@ generateDailyOrders = (date, daySalesIndex, pushTo)->
 		#wybierz danie z kategorii
 		chosenDish = Utils.random.arrayItem chosenCategory.kategoria.dania
 		# jeśli już ta kategoria jest pusta, to usuń ją z remaining
+		chosenCategory.numSales-- # wykorzystaj danie z tej kategorii
 		if chosenCategory.numSales == 0
 			Utils.array.removeUnordered(remainingSales, chosenCategory)
-		print chosenCategory.kategoria.dania
-		print chosenCategory.kategoria.nazwa
 		return chosenDish
 	#na początku każde zamówienie musi mieć jedno jakieś danie
 	for dailyOrder in DailyOrder
 		dodajDanieDoZamowienia wybierzJakiesDanie(), dailyOrder
 	#potem mozna losowane dania dodawac do losowych zamówień
-	#	while remainingSales.length
-	#		dodajDanieDoZamowienia wybierzJakiesDanie(), Utils.random.arrayItem DailyOrder
+	while remainingSales.length
+		dodajDanieDoZamowienia wybierzJakiesDanie(), Utils.random.arrayItem DailyOrder
 
-
-#	print DailyOrder
+#	print dailyOrder.toString() for dailyOrder in DailyOrder
+#	print 'dan sprzedanych: ', iloscDodanychDan, 'sum sales: ',sumSales
+	for dailyOrder in DailyOrder
+		erd.Zamowienie.push dailyOrder
+		pozycjeTab=[]
+		c=0
+		for id, poz of dailyOrder.pozycje
+			pozycjeTab.push poz
+			erd.ZamowienieProdukt.push poz
+			poz.nr=c
+			c++
+		dailyOrder.pozycje=pozycjeTab

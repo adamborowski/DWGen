@@ -107,6 +107,12 @@ c =
 
 # słownik dań |nazwa cena_za_porcje porcja kategoria|
 dania = [
+	['Piwo jasne', 7, 350, c.alkohole]
+	['Piwo ciemne', 7, 350, c.alkohole]
+	['Wódka czysta', 14, 100, c.alkohole]
+	['Wino wytrawne czerwone', 18, 150, c.alkohole]
+	['Wino wytrawne białe', 18, 150, c.alkohole]
+	['Wino słodkie białe', 21, 150, c.alkohole]
 	['Margerita', 24, 400, c.pizza]
 	['Capricciosa', 23, 400, c.pizza]
 	['Fungi', 23, 400, c.pizza]
