@@ -48,6 +48,7 @@
       r = _ref1[_j];
       line("INSERT INTO Kelner VALUES (" + r.id + ", '" + r.nazwisko + "', '" + r.imie + "', " + r.data_zatrudnienia + ", " + r.restauracja.id + ")");
     }
+    line(header('KATEGORIE'));
     return save();
   };
 

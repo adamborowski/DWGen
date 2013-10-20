@@ -22,7 +22,9 @@ exports.writeSQL = (erd)->
 	line header 'KELNERZY'
 	for r in erd.Kelner
 		line "INSERT INTO Kelner VALUES (#{r.id}, '#{r.nazwisko}', '#{r.imie}', #{r.data_zatrudnienia}, #{r.restauracja.id})"
+	line header 'KATEGORIE'
 	save()
+
 
 
 
