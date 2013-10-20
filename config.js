@@ -16,8 +16,8 @@
         minCapacity: 22,
         maxCapacity: 82,
         avgOrderSize: 3,
-        minWaitMinutes: 5,
-        maxWaitMinutes: 12,
+        minWaitMinutes: 30,
+        maxWaitMinutes: 60,
         initialSalesRatio: 0.56,
         swing: {
           lowLimit: 0.998,

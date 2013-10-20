@@ -23,38 +23,16 @@
             <znizka usluga="FACBD3" firma="224/S/U7">
                 <rabat>50%</rabat>
                 <zasieg>kregle</zasieg>
-                <oferowane od="2011-02-1" do="2016-01-01"/>
+                <oferowane od="2011-02-1" do="2016-01-01" generuj="23"/>
                 <tokeny>
-                    <!--<token kod="KLDSGBFDFNFYU" od="2011-02-01" do="2011-02-11"/>-->
-                    <!--<token kod="QYANZXCMSOADU" od="2011-02-01" do="2011-02-11"/>-->
-                    <!--<token kod="UIASYDAYYDAYU" od="2011-02-01" do="2011-02-11"/>-->
-
-                    <!--<token kod="GBOYAWMLDZCIN" od="2011-02-05" do="2011-02-15"/>-->
-                    <!--<token kod="AAOAWPCCZPLQS" od="2011-02-05" do="2011-02-15"/>-->
-                    <!--<token kod="VVVCAOISUADWM" od="2011-02-05" do="2011-02-15"/>-->
-
-                    <!--<token kod="POPAOSDJAWAJJ" od="2011-03-01" do="2011-03-11"/>-->
-                    <!--<token kod="CNZXFUCKYWQQQ" od="2011-03-01" do="2011-03-11"/>-->
-                    <!--<token kod="LLASPDPAPDSPA" od="2011-03-01" do="2011-03-11"/>-->
-
-                    <!--<token kod="AERCTYVUIBEKM" od="2011-03-05" do="2011-03-15"/>-->
-                    <!--<token kod="OASDOASPDADAS" od="2011-03-05" do="2011-03-15"/>-->
-                    <!--<token kod="HXCCAIOKDSKKF" od="2011-03-05" do="2011-03-15"/>-->
                 </tokeny>
             </znizka>
             <!--zniżka na alkohol-->
             <znizka usluga="DAC809" firma="231/A/Resta">
                 <rabat>10%</rabat>
                 <zasieg>alkohol</zasieg>
-                <oferowane od="2011-01-01" do="2016-12-31"/>
+                <oferowane od="2011-01-01" do="2016-12-31" generuj="234"/>
                 <tokeny>
-                    <!--<token kod="ASDGASDJHDSAS" od="2011-01-01" do="2011-01-31"/>-->
-                    <!--<token kod="ASDCIPAESHHHS" od="2011-01-01" do="2011-01-31"/>-->
-                    <!--<token kod="CAWAPOCUTASUA" od="2011-01-01" do="2011-01-31"/>-->
-
-                    <!--<token kod="AXHTYCHUJUXZP" od="2011-02-01" do="2011-02-30"/>-->
-                    <!--<token kod="PAOSDAOSDYCCC" od="2011-02-01" do="2011-02-30"/>-->
-                    <!--<token kod="ADSUBWCYTFAAB" od="2011-02-01" do="2011-02-30"/>-->
                 </tokeny>
             </znizka>
         </firma>
@@ -62,21 +40,13 @@
             <znizka usluga="AACEFD" firma="224/S/U7">
                 <rabat>30%</rabat>
                 <zasieg>kregle</zasieg>
-                <oferowane od="2012-04-23" do="2013-01-01"/>
+                <oferowane od="2012-04-23" do="2013-01-01" generuj="123"/>
                 <tokeny>
-                    <!--<token kod="APSTDZIWKAYHS" od="2011-01-01" do="2011-01-31"/>-->
-                    <!--<token kod="CUWALSEKONIAU" od="2011-01-01" do="2011-01-31"/>-->
-                    <!--<token kod="PASODIHWABXCZ" od="2011-01-01" do="2011-01-31"/>-->
-
-                    <!--<token kod="DSIIDHSIDUHSA" od="2011-02-01" do="2011-02-30"/>-->
-                    <!--<token kod="AODSIUNDUSAPO" od="2011-02-01" do="2011-02-30"/>-->
-                    <!--<token kod="AAWQEASCVZVKK" od="2011-02-01" do="2011-02-30"/>-->
-                    <!--tokeny w banku są tworzone w momencie płacenia kartą!-->
                 </tokeny>
             </znizka>
             <znizka usluga="8945CA" firma="231/A/Resta">
                 <zasieg>pizza</zasieg>
-                <oferowane od="2007-04-03" do="2008-01-01"/>
+                <oferowane od="2007-04-03" do="2008-01-01" generuj="54"/>
                 <rabat>25%</rabat>
                 <tokeny></tokeny>
             </znizka>

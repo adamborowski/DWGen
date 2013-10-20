@@ -70,8 +70,9 @@ for name, i in config.erd.restaurantNames
     Kelner.push kelner
     restauracja.kelnerzy.push kelner
 
-#salesSimulator.simulate config, ERD
 discountsSimulator.simulate config, ERD
+#salesSimulator.simulate config, ERD
+# TODO odchaczyć salesSimulator oraz kody do wykorzystania zwrócone z sumulatora zniżek brać pod uwagę przy braniu zamówienia (jeśli jest kategoria podchodząca zniżce)
 
 #console.log("Restauracja:", Restauracja);
 #console.log("Kelner:", Kelner);

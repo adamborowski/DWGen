@@ -35,12 +35,12 @@
   };
 
   exports.writeSQL = function(erd) {
-    var d, k, k2, r, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3;
+    var d, k, k2, r, z, zp, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
     line(header('RESTAURACJE'));
     _ref = erd.Restauracja;
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       r = _ref[_i];
-      line("INSERT INTO Restauracja VALUES (" + r.id + ", '" + r.nazwa + "', '" + r.adres + "', " + r.godzina_otwarcia + ", " + r.godzina_zamkniecia + ", " + r.liczba_miejsc + ")");
+      line("INSERT INTO Restauracje VALUES (" + r.id + ", '" + r.nazwa + "', '" + r.adres + "', " + r.godzina_otwarcia + ", " + r.godzina_zamkniecia + ", " + r.liczba_miejsc + ")");
     }
     line(header('KELNERZY'));
     _ref1 = erd.Kelner;
@@ -59,6 +59,18 @@
     for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
       d = _ref3[_l];
       line("INSERT INTO Dania VALUES (" + d.id + ", " + d.kategoria.id + ", '" + d.nazwa + "', " + d.cena + ", " + d.porcja + ", '" + d.kategoria.jednostka + "')");
+    }
+    line(header('ZAMOWIENIA'));
+    _ref4 = erd.Zamowienie;
+    for (_m = 0, _len4 = _ref4.length; _m < _len4; _m++) {
+      z = _ref4[_m];
+      line("INSERT INTO Zamowienia VALUES (" + z.id + ", " + z.kelner.id + ", '" + z.data_przyjecia + "', '" + z.data_platnosci + "', " + z.numer_stolika + ", 'ABCDEFGHIJKLM', '" + z.platnosc + "')");
+    }
+    line(header('ZAMOWIENIA_DANIA'));
+    _ref5 = erd.ZamowienieProdukt;
+    for (_n = 0, _len5 = _ref5.length; _n < _len5; _n++) {
+      zp = _ref5[_n];
+      line("INSERT INTO ZamowieniaDania VALUES (" + zp.zamowienie.id + ", " + zp.danie.id + ", " + zp.porcja + ", " + zp.cena + ")");
     }
     return save();
   };
