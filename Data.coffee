@@ -1,8 +1,8 @@
 services: [
 	food:
-		"Alkohol po godzinach": ["alkohole"],
-		"Wieczorem taniej": ["glowne", "napoje", "desery", "salatki"],
-		"Weekendowa Pizza": ["pizza", "napoje"],
+		"Alkohol po godzinach": ["alkohole"]
+		"Wieczorem taniej": ["glowne", "napoje", "desery", "salatki"]
+		"Weekendowa Pizza": ["pizza", "napoje"]
 		"Makarony za pół ceny": ["makarony"]
 	entertainment: [
 		"Godzina kręgli": [

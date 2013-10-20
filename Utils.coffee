@@ -1,3 +1,15 @@
+Date::toDayString = ->
+	m = @getMonth()+1
+	m="0"+m if m<10
+	d=@getDate()
+	d="0"+d if d<10
+	"#{@getFullYear()}-#{m}-#{d}"
+dateUtils = require 'date-utils'
+compare = (a, b) ->
+	return -1  if a.when < b.when
+	return 1  if a.when > b.when
+	0
+
 names =
 	food: [
 		"Restaurante"
