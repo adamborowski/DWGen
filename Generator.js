@@ -47,7 +47,7 @@
   _ref = data.kategorie;
   for (key in _ref) {
     kategoria_data = _ref[key];
-    kategoria_data.id = key;
+    kategoria_data.id = ERD.id(Kategoria);
     Kategoria.push(kategoria_data);
     kategoria_data.dania = [];
   }
@@ -64,6 +64,7 @@
     };
     danie.kategoria.dania.push(danie);
     Danie.push(danie);
+    danie_data.id = danie.id;
   }
 
   _ref2 = config.erd.restaurantNames;
@@ -92,8 +93,6 @@
       restauracja.kelnerzy.push(kelner);
     }
   }
-
-  salesSimulator.simulate(config, ERD);
 
   discountsSimulator.simulate(config, ERD);
 

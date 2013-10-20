@@ -13,6 +13,9 @@
             <usluga nazwa="Alkohol taniej wieczorem" id="DAC809">
                 <oferowane od="2011-01-01" do="2014-12-31"/>
             </usluga>
+            <usluga nazwa="Pizzujemy" id="8945CA">
+                <oferowane od="2007-04-03" do="2008-01-01"/>
+            </usluga>
         </firma>
     </uslugi>
     <znizki>
@@ -55,7 +58,7 @@
                 </tokeny>
             </znizka>
         </firma>
-        <firma nazwa="EmBank" rejestracja="2012-04-23">
+        <firma nazwa="MBank" rejestracja="2012-04-23">
             <znizka usluga="AACEFD" firma="224/S/U7">
                 <rabat>30%</rabat>
                 <zasieg>kregle</zasieg>
@@ -70,6 +73,12 @@
                     <!--<token kod="AAWQEASCVZVKK" od="2011-02-01" do="2011-02-30"/>-->
                     <!--tokeny w banku są tworzone w momencie płacenia kartą!-->
                 </tokeny>
+            </znizka>
+            <znizka usluga="8945CA" firma="231/A/Resta">
+                <zasieg>pizza</zasieg>
+                <oferowane od="2007-04-03" do="2008-01-01"/>
+                <rabat>25%</rabat>
+                <tokeny></tokeny>
             </znizka>
         </firma>
     </znizki>
