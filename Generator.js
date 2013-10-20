@@ -93,8 +93,6 @@
     }
   }
 
-  salesSimulator.simulate(config, ERD);
-
   discountsSimulator.simulate(config, ERD);
 
   console.log("Zamowienie:", Zamowienie.length);

@@ -10,7 +10,7 @@ swing = undefined
 restaurant = undefined
 #
 testCategory = undefined
-
+ZamowienieLastId=0
 
 #
 exports.init = (_config, _erd, _restaurant)->
@@ -111,6 +111,7 @@ generateDailyOrders = (date, daySalesIndex)->
 		orderTime = genTime()
 		makeDuration = Utils.random.float config.erd.restaurant.minWaitMinutes, config.erd.restaurant.maxWaitMinutes
 		dailyOrder =
+			id: ZamowienieLastId++
 			data_przyjecia: orderTime
 			data_platnosci: new Date(orderTime).addMinutes makeDuration
 			kelner: Utils.random.arrayItem restaurant.kelnerzy

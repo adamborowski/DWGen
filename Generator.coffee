@@ -69,7 +69,7 @@ for name, i in config.erd.restaurantNames
 		Kelner.push kelner
 		restauracja.kelnerzy.push kelner
 
-salesSimulator.simulate config, ERD
+#salesSimulator.simulate config, ERD
 discountsSimulator.simulate config, ERD
 
 
