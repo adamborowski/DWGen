@@ -13,6 +13,8 @@ line = (s)->
 exports.writeSQL = (erd)->
 	for r in erd.Restauracja
 		line "INSERT INTO Restauracja VALUES (#{r.id}, '#{r.nazwa}', '#{r.adres}', #{r.godzina_otwarcia}, #{r.godzina_zamkniecia}, #{r.liczba_miejsc})"
+  for r in erd.Kelner
+    line "INSERT INTO Restauracja VALUES (#{r.id}, '#{r.nazwa}', '#{r.adres}', #{r.godzina_otwarcia}, #{r.godzina_zamkniecia}, #{r.liczba_miejsc})"
 	save()
 
 
