@@ -2,7 +2,11 @@
 (function() {
   var Danie, Kategoria, Kelner, Restauracja, Zamowienie, ZamowienieProdukt, charlatan, config, danie, danie_data, data, i, j, kategoria_data, kelner, key, name, numWaiters, restauracja, utils, _i, _j, _len, _ref, _ref1, _ref2;
 
-  config = require("./config.json");
+  config = require("./config.js");
+
+  for (name in config.config) {
+    config[name] = config.config[name];
+  }
 
   data = require('./Data.js');
 
@@ -50,9 +54,9 @@
       id: Restauracja.length + 1,
       nazwa: name,
       adres: "" + (charlatan.Address.streetAddress()) + ", " + (charlatan.Address.zipCode()) + " " + (charlatan.Address.city()),
-      godzina_otwarcia: utils.random.integer(7, 9),
-      godzina_zamkniecia: utils.random.integer(19, 22),
-      liczba_miejsc: utils.random.integer(22, 82)
+      godzina_otwarcia: utils.random.integer(config.erd.openTime[0], config.erd.openTime[1]),
+      godzina_zamkniecia: utils.random.integer(config.erd.closeTime[0], config.erd.closeTime[1]),
+      liczba_miejsc: utils.random.integer(config.erd.minRestaurantCapacity, config.erd.maxRestaurantCapacity)
     };
     Restauracja.push(restauracja);
     numWaiters = Math.ceil(Math.random() * 0.1 + 0.95 * restauracja.liczba_miejsc / 8);

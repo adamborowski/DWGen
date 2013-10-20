@@ -3,12 +3,14 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/Generator.js" />
+        <item url="file://$PROJECT_DIR$/config.js" />
         <item url="file://$PROJECT_DIR$/Data.js" />
         <item url="file://$PROJECT_DIR$/Utils.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/Generator.js" />
+      <root url="file://$PROJECT_DIR$/config.js" />
       <root url="file://$PROJECT_DIR$/Data.js" />
       <root url="file://$PROJECT_DIR$/Utils.js" />
     </CLASSES>
